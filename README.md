@@ -14,7 +14,7 @@ Aquí observamos que tenemos como pantalla principal la interna (eDP-1) y como s
 
 Una vez que tenemos la lista de las pantallas activas podemos indicar cual queremos que sea la principal, con el comando: ``xrandr --output eDP-1 --primary``
 
-<img aling="center">![image](https://github.com/Llo0zy/LinuxTips/assets/108870244/fe410f9b-6182-4b26-a493-1027ddf4c147)</img>
+![image](https://github.com/Llo0zy/LinuxTips/assets/108870244/fe410f9b-6182-4b26-a493-1027ddf4c147)
 
 También podemos cambiar las posiciones de las pantallas, imaginate que tu tienes tu pantalla principal en la izquierda y la secundaria en la derecha, pero el sistema te lo detecta al reves, perfectamente podemos usar el comando: ``xrandr --output eDP-1 --left-of HDMI-1``, tanto left como right, bottom o top, podmeos usar para cambiar el orden de las pantallas, como vemos tampoco es algo muy complicado.
 
