@@ -103,6 +103,44 @@ uiero aclarar que no recomiendo esto, ya que no estoy seguro de si hay mejores f
 
 Este archivo se encuentra en la ruta: `~/.config/bspwm/`, con el nombre: `bspwmrc`. En mi caso, en la primera línea del archivo ejecutable, suelo configurar las salidas, desplazamientos de las pantallas y algunas aplicaciones. El procedimiento es similar al apartado anterior, solo que cambiando el archivo.
 
+## Sincronizar el horario
+Si eres despistado, y en la instalación de tu linux has olvidado o te has equivocado cual es tu horario yo traigo tu segunda oportunidad.
+Con el comando: `sudo ntpdate 0.es.poll.ntp.org` puedes conectarte al servidor que te proporcionará el horario de España, si quereis hacerlo manual también teneís el comando: 
+`sudo date -s "año-mes-dia hora:minutos:segundos`
+
+Aquí os dejo un listado con los servidores más famosos para sincronizar tu horario.
+
+-América del Norte:
+  0.north-america.pool.ntp.org
+  1.north-america.pool.ntp.org
+  2.north-america.pool.ntp.org
+  3.north-america.pool.ntp.org
+  
+-Europa:
+  0.europe.pool.ntp.org
+  1.europe.pool.ntp.org
+  2.europe.pool.ntp.org
+  3.europe.pool.ntp.org
+
+-Asia:
+  0.asia.pool.ntp.org
+  1.asia.pool.ntp.org
+  2.asia.pool.ntp.org
+  3.asia.pool.ntp.org
+  
+-Oceanía:
+  0.oceania.pool.ntp.org
+  1.oceania.pool.ntp.org
+  2.oceania.pool.ntp.org
+  3.oceania.pool.ntp.org
+
+-Sudamérica:
+  0.south-america.pool.ntp.org
+  1.south-america.pool.ntp.org
+  2.south-america.pool.ntp.org
+  3.south-america.pool.ntp.org
+
+PD: Podeís poner el acronímo de tu país, por ejemplo: españa -> es o rusia -> ru :)
 <hr>
 
 Espero que esta pequeña guía te haya sido útil. La iré ampliando a medida que recuerde nuevos trucos de Linux que puedan ser útiles. ¡Muchas gracias!
