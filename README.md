@@ -145,6 +145,28 @@ PD: Podeís poner el acronímo de tu país, por ejemplo: españa -> es o rusia -
 ## Subir y bajar el volumen
 Seguramente os pase como a mi, y las teclas de manipulación del volumen esten desconfiguradas por eso os quiero dejar un par de scripts que he hecho en bash para poder subir y bajar el volumen todo sin problemas, lo dejare colgado en el repositorio para no ocupar mucho este archivo. :)
 
+Aun asi, hay que añadir estas lineas de código en el archivo de configuración de la sxhkd:
+```
+#############################
+# Volume/Brightness Changer #
+#############################
+
+# Volume up
+F3
+    /home/**tu_user**/.config/bin/volume_up.sh
+
+
+# Volume up
+F2
+    /home/**tu_user**/.config/bin/volume_down.sh
+
+# Toggle volume on/off
+F1
+    /home/**tu_user**/.config/bin/toggle_mute.sh
+```
+
+## Subir y bajar el brillo
+Esto estará dentro de poco...
 <hr>
 
 Espero que esta pequeña guía te haya sido útil. La iré ampliando a medida que recuerde nuevos trucos de Linux que puedan ser útiles. ¡Muchas gracias!
