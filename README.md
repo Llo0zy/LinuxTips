@@ -39,7 +39,7 @@ Con el comando: ```xinput --set-prop 14 "Coordinate Transformation Matrix" 0.5 0
 ## Shortcuts
 Una ventaja que tiene linux sobre windows es que puedes poner atajos de teclado para todo y esto es gracias a: **sxhkd**, no os preocupeis por el nombre os ireis acostumbrando :), el caso al instalar esta herramienta se nos creara un archivo en la ruta: ``~/.config/sxhkd/sxhkdrc``, aqui os saldra varias por defecto, yo os dejare un par que me han servido muchísimo.
 
-#### Base para los shortcuts
+##### Base para los shortcuts
 Os dejo tambien algunas referencias por si no estais acostumbrados:
 - Return -> Enter
 - super -> Tecla de Windows
@@ -51,32 +51,32 @@ combinacion + del teclado
   /ruta/del/archivo o comando
 ```
 
-### Abrir terminal
+#### Abrir terminal
 ```
 super + Return
   /opt/kitty/bin/kitty
 ```
 
-### Tomar captura de pantalla
+#### Tomar captura de pantalla
 Para esto necesitareis **flameshot**, para ello instalaremos el paquete: ``sudo apt install flameshot``
 ```
 super + shift + s # El mismo comando que usamos en windows
   flameshot gui 
 ```
 
-### Abrir Obsidian
+#### Abrir Obsidian
 ```
 super + shift + o
   obsidian
 ```
 
-### Abrir Google Chrome
+#### Abrir Google Chrome
 ```
 super + shift + g
   google-chrome-stable
 ```
 
-### Centrarse en una aplicacion
+#### Centrarse en una aplicacion
 ```
 super + g
   bspc node -s biggest.window
@@ -85,9 +85,7 @@ super + g
 
 
 ## Ejecutar comandos al inciar la terminal
-Esto sirve tanto como dice el titulo, ejecutar comando nada más al iniciar la terminal, tanto al inciar el sistema operativo.
-
-Empezamos al incial la terminal, para esto tendremos que ir al archivo de configuración de nuestro usuario, esto lo podemos ver con: ``echo $SHELL``, en mi caso estoy usando una szh si nos vamos a ``cd ~ o cd`` y ejecutamos un ``ls -a `` podemos encontrar el nombre de nuestra terminal:
+Para esto tendremos que ir al archivo de configuración de nuestro usuario, esto lo podemos ver con: ``echo $SHELL``, en mi caso estoy usando una szh si nos vamos a ``cd ~ o cd`` y ejecutamos un ``ls -a `` podemos encontrar el nombre de nuestra terminal:
 
 ![image](https://github.com/Llo0zy/LinuxTips/assets/108870244/8db25c4b-9347-4e59-9ade-dda8fe254aba)
 
@@ -100,3 +98,12 @@ function upgrade(){
 ```
 
 Ahora al poner **upgrade** se updateara el sistema, usara el comando **parrot-upgrade** (al usar parrot si uso simplemente **apt upgrade** puedo estropear el sistema) y **apt --fix-broken install**.
+
+## Ejecutar comandos al inciar el sistema
+Quiero aclarar que esto no lo recomiendo ya que no estoy seguro si hay otras maneras para hacerlo mejor o no, pero esto es a vuestra elección. En los archivos de configuración de **bspwm**, que se ejecutan nada más encenderse el ordenador, se pueden modificar y meter los comando que deseas ejecutar, como **.zshrc** pero sin abrir la terminal.
+
+Este archivo lo podemos encontrar en la ruta: ``~/.config/bspwm/`` con el nombre: ``bspwmrc``, en mi caso, en la primera linea del ejecutable suelo configurar las salidas, desplazamientos de las pantallas y de algunas aplicaciones. Tiene el mismo procedimiento que el apartado anterior solo que cambiando el archivo.
+
+
+<hr>
+Espero que os haya servido esta pequeña guia, la ire aumentando cuando me vaya acordando y aprendiendo nuevos trucos de linux que os puedan servir utiles, muchas gracias.
