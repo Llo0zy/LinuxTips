@@ -3,6 +3,7 @@ Este no será un post como otro cualquiera, os voy a dar un par de truquicos por
 
 Yo tendre como distro a Parrot Security Edition, ya que me resulta más fácil tener todas las herramientas instaladas por defecto, dicho esto, espero que os guste mucho y empecemos!!!
 
+
 ## Doble Pantalla
 Al pasarse a nativo el primer error que te vas a encontrar va a ser que no detecta bien las pantallas extenernas (si usas portatil) o pantallas extras que pongas con ordenador de mesa, esto sirve principalmente para 2 pantallas, pero también lo puedes aplicar con 3 o las que quieras.
 
@@ -23,7 +24,16 @@ Otra opción menos común, son las pantallas verticales, aquí os dejo un comand
 Quiero añadir que si estas usando la polybar en los archivos: ``~/.config/polybar/current.ini`` y ``~/.config/polybar/workspace.ini`` tienen el argumento **monitor=** que suele estar vacio o con la variable: ``${env:PRIMARY_MONITOR}``, podemos añadir los nombres de las pantallas (también llamados: IDs).
 
 
+
 ## Cambiar el DPI de tu ratón
+Soy una de esas personas muy tiquismiquis cuando hablamos de la sensibilidad de mi ratón, por eso me parece muy importante saber cambiar el DPI de tu ratón mediante la terminal.
+Como las pantallas, primero tendremos que listar que es lo que detecta el sistema, con el comando: ``xinput list`` lo podemos ver:
+
+![image](https://github.com/Llo0zy/LinuxTips/assets/108870244/5d3239c3-3acf-41db-9b24-62fed953bd16)
+
+Como podemos ver a mi me detecta tanto mi raton inalambrico (Marcando con un rectangulo rojo) y mi touchpad (**id=16**), estoy se identifican con las ids, que también usaremos para modificar el DPI, una vez que sabemos que **ID** tiene nuestro ratón, en mi caso **id=14**, podemos proceder a cambiar el DPI (cabe recalcar que este cambio solo afectara a la sesión activa, es decir, si apagamos y volvemos a encender el DPI se reiniciara, por eso os recomiendo saber como ejecutar comandos automaticamente al iniciar el sistema).
+
+Con el comando: ```xinput --set-prop 14 "Coordinate Transformation Matrix" 0.5 0 0 0 0.5 0  0 0 1``` podemos disminuir la velocidad del ratón, esto lo tienes que ir probando tu mismo, pero con >1 disminuimos y con <1 aumentamos la velocidad.
 
 
 ## Shortcuts
@@ -51,7 +61,7 @@ super + Return
 Para esto necesitareis **flameshot**, para ello instalaremos el paquete: ``sudo apt install flameshot``
 ```
 super + shift + s # El mismo comando que usamos en windows
-  flameshot gui
+  flameshot gui 
 ```
 
 ### Abrir Obsidian
@@ -71,6 +81,7 @@ super + shift + g
 super + g
   bspc node -s biggest.window
 ```
+
 
 
 ## Ejecutar comandos al inciar la terminal
