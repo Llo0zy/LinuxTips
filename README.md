@@ -1,23 +1,23 @@
 # LinuxTips
-Este no será un post como otro cualquiera, os voy a dar un par de truquicos por si eres nuevo en los entornos de linux y vienes de estar toda tu vida con Windows. Seguro que hay alguien que se esta pensando pasarse a un linux nativo (como sistema operativo principal) pues esta es tu señal, si yo pude, tu también.
+Este no será un post como cualquier otro. Voy a darte un par de truquitos por si eres nuevo en los entornos de Linux y vienes de estar toda tu vida con Windows. Seguro que hay alguien que está pensando en pasarse a un Linux nativo (como sistema operativo principal). Pues esta es tu señal; si yo pude, tú también.
 
-Yo tendre como distro a Parrot Security Edition, ya que me resulta más fácil tener todas las herramientas instaladas por defecto, dicho esto, espero que os guste mucho y empecemos!!!
+Yo utilizaré Parrot Security Edition como mi distribución (distro), ya que me resulta más fácil tener todas las herramientas instaladas por defecto. Dicho esto, ¡espero que os guste mucho y empecemos!
 
 
 ## Doble Pantalla
-Al pasarse a nativo el primer error que te vas a encontrar va a ser que no detecta bien las pantallas extenernas (si usas portatil) o pantallas extras que pongas con ordenador de mesa, esto sirve principalmente para 2 pantallas, pero también lo puedes aplicar con 3 o las que quieras.
+Al pasarte a nativo, el primer problema que enfrentarás será que no detecta bien las pantallas externas (si usas un portátil) o las pantallas adicionales que conectes a una computadora de escritorio. Esto se aplica principalmente a 2 pantallas, pero también se puede aplicar a 3 o las que quieras.
 
-Usaremos todo el rato el comando **xrandr**, comenzaremos viendo que pantallas nos esta detectando el sistema, para esto usaremos: ``xrandr --listactivemonitors``
+Utilizaremos el comando **xrandr** todo el tiempo. Comenzaremos viendo qué pantallas nos está detectando el sistema. Para esto, usaremos: `xrandr --listactivemonitors`
 
 ![image](https://github.com/Llo0zy/LinuxTips/assets/108870244/ece6c062-2bde-4324-862b-dbd789822241)
 
-Aquí observamos que tenemos como pantalla principal la interna (eDP-1) y como secundaria la externa (HMDI-1)
+Aquí observamos que tenemos la pantalla interna (eDP-1) como principal y la pantalla externa (HDMI-1) como secundaria.
 
-Una vez que tenemos la lista de las pantallas activas podemos indicar cual queremos que sea la principal, con el comando: ``xrandr --output eDP-1 --primary``
+Una vez que tenemos la lista de pantallas activas, podemos indicar cuál queremos que sea la principal con el comando:`xrandr --output eDP-1 --primary`
 
 ![image](https://github.com/Llo0zy/LinuxTips/assets/108870244/fe410f9b-6182-4b26-a493-1027ddf4c147)
 
-También podemos cambiar las posiciones de las pantallas, imaginate que tu tienes tu pantalla principal en la izquierda y la secundaria en la derecha, pero el sistema te lo detecta al reves, perfectamente podemos usar el comando: ``xrandr --output eDP-1 --left-of HDMI-1``, tanto left como right, bottom o top, podmeos usar para cambiar el orden de las pantallas, como vemos tampoco es algo muy complicado.
+También podemos cambiar las posiciones de las pantallas. Imagina que tienes tu pantalla principal a la izquierda y la secundaria a la derecha, pero el sistema lo detecta al revés. Perfectamente podemos usar el comando: `xrandr --output eDP-1 --left-of HDMI-1`. Tanto left como right, bottom o top, podemos usar para cambiar el orden de las pantallas. Como ves, tampoco es algo muy complicado.
 
 Otra opción menos común, son las pantallas verticales, aquí os dejo un comando para poder rotar la orientación de la pantalla y que la resolución se adapte mejor: ``randr --output HDMI-1 --rotate left``, como en otros comando puede ser: left, right, bottom, top y para dejarla por defecto ponemos: normal
 
@@ -26,8 +26,7 @@ Quiero añadir que si estas usando la polybar en los archivos: ``~/.config/polyb
 
 
 ## Cambiar el DPI de tu ratón
-Soy una de esas personas muy tiquismiquis cuando hablamos de la sensibilidad de mi ratón, por eso me parece muy importante saber cambiar el DPI de tu ratón mediante la terminal.
-Como las pantallas, primero tendremos que listar que es lo que detecta el sistema, con el comando: ``xinput list`` lo podemos ver:
+Soy una de esas personas muy quisquillosas cuando se trata de la sensibilidad de mi ratón. Por eso, me parece muy importante saber cómo cambiar el DPI de tu ratón mediante la terminal. Al igual que con las pantallas, primero tendremos que listar qué es lo que detecta el sistema con el comando ``xinput list``. Lo podemos ver aquí:
 
 ![image](https://github.com/Llo0zy/LinuxTips/assets/108870244/5d3239c3-3acf-41db-9b24-62fed953bd16)
 
@@ -100,12 +99,10 @@ function upgrade(){
 Ahora al poner **upgrade** se updateara el sistema, usara el comando **parrot-upgrade** (al usar parrot si uso simplemente **apt upgrade** puedo estropear el sistema) y **apt --fix-broken install**.
 
 ## Ejecutar comandos al inciar el sistema
-Quiero aclarar que esto no lo recomiendo ya que no estoy seguro si hay otras maneras para hacerlo mejor o no, pero esto es a vuestra elección. En los archivos de configuración de **bspwm**, que se ejecutan nada más encenderse el ordenador, se pueden modificar y meter los comando que deseas ejecutar, como **.zshrc** pero sin abrir la terminal.
+uiero aclarar que no recomiendo esto, ya que no estoy seguro de si hay mejores formas de hacerlo o no. Pero esta es tu elección. En los archivos de configuración de **bspwm**, que se ejecutan al encender el ordenador, se pueden modificar y agregar los comandos que desees ejecutar, como en el archivo **.zshrc**, pero sin abrir la terminal.
 
-Este archivo lo podemos encontrar en la ruta: ``~/.config/bspwm/`` con el nombre: ``bspwmrc``, en mi caso, en la primera linea del ejecutable suelo configurar las salidas, desplazamientos de las pantallas y de algunas aplicaciones. Tiene el mismo procedimiento que el apartado anterior solo que cambiando el archivo.
-
+Este archivo se encuentra en la ruta: `~/.config/bspwm/`, con el nombre: `bspwmrc`. En mi caso, en la primera línea del archivo ejecutable, suelo configurar las salidas, desplazamientos de las pantallas y algunas aplicaciones. El procedimiento es similar al apartado anterior, solo que cambiando el archivo.
 
 <hr>
 
-
-Espero que os haya servido esta pequeña guia, la ire aumentando cuando me vaya acordando y aprendiendo nuevos trucos de linux que os puedan servir utiles, muchas gracias.
+Espero que esta pequeña guía te haya sido útil. La iré ampliando a medida que recuerde nuevos trucos de Linux que puedan ser útiles. ¡Muchas gracias!
