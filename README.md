@@ -141,6 +141,10 @@ Aquí os dejo un listado con los servidores más famosos para sincronizar tu hor
   3.south-america.pool.ntp.org
 
 PD: Podeís poner el acronímo de tu país, por ejemplo: españa -> es o rusia -> ru :)
+
+## Subir y bajar el volumen
+Seguramente os pase como a mi, y las teclas de manipulación del volumen esten desconfiguradas por eso os quiero dejar un par de scripts que he hecho en bash para poder subir y bajar el volumen todo sin problemas, lo dejare colgado en el repositorio para no ocupar mucho este archivo. :)
+
 <hr>
 
 Espero que esta pequeña guía te haya sido útil. La iré ampliando a medida que recuerde nuevos trucos de Linux que puedan ser útiles. ¡Muchas gracias!
