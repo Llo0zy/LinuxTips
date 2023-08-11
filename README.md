@@ -106,4 +106,6 @@ Este archivo lo podemos encontrar en la ruta: ``~/.config/bspwm/`` con el nombre
 
 
 <hr>
+
+
 Espero que os haya servido esta pequeña guia, la ire aumentando cuando me vaya acordando y aprendiendo nuevos trucos de linux que os puedan servir utiles, muchas gracias.
