@@ -23,6 +23,9 @@ Otra opción menos común, son las pantallas verticales, aquí os dejo un comand
 Quiero añadir que si estas usando la polybar en los archivos: ``~/.config/polybar/current.ini`` y ``~/.config/polybar/workspace.ini`` tienen el argumento **monitor=** que suele estar vacio o con la variable: ``${env:PRIMARY_MONITOR}``, podemos añadir los nombres de las pantallas (también llamados: IDs).
 
 
+## Cambiar el DPI de tu ratón
+
+
 ## Shortcuts
 Una ventaja que tiene linux sobre windows es que puedes poner atajos de teclado para todo y esto es gracias a: **sxhkd**, no os preocupeis por el nombre os ireis acostumbrando :), el caso al instalar esta herramienta se nos creara un archivo en la ruta: ``~/.config/sxhkd/sxhkdrc``, aqui os saldra varias por defecto, yo os dejare un par que me han servido muchísimo.
 
@@ -68,3 +71,21 @@ super + shift + g
 super + g
   bspc node -s biggest.window
 ```
+
+
+## Ejecutar comandos al inciar la terminal
+Esto sirve tanto como dice el titulo, ejecutar comando nada más al iniciar la terminal, tanto al inciar el sistema operativo.
+
+Empezamos al incial la terminal, para esto tendremos que ir al archivo de configuración de nuestro usuario, esto lo podemos ver con: ``echo $SHELL``, en mi caso estoy usando una szh si nos vamos a ``cd ~ o cd`` y ejecutamos un ``ls -a `` podemos encontrar el nombre de nuestra terminal:
+
+![image](https://github.com/Llo0zy/LinuxTips/assets/108870244/8db25c4b-9347-4e59-9ade-dda8fe254aba)
+
+En este archivo podremos ejecutar comandos como si fuera una terminal normal y corriente, y cada vez que abramos una terminal, da igua que sea una ventana o una partición se ejecutara todos los comandos que escribas en este archivo.
+Aquí también puedes meter funciones para agilizar tu proceso, yo os dejo una función que uso todos los dias al iniciar mi terminal:
+```
+function upgrade(){
+    sudo apt update && parrot-upgrade -y && sudo apt --fix-broken  install
+}
+```
+
+Ahora al poner **upgrade** se updateara el sistema, usara el comando **parrot-upgrade** (al usar parrot si uso simplemente **apt upgrade** puedo estropear el sistema) y **apt --fix-broken install**.
